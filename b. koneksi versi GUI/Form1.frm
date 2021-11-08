@@ -312,7 +312,7 @@ Private Sub cmdListAtribut_Click()
             MyRS.CloseRecordset
             Set MyRS = Nothing
 
-            lblJumlahAtribut = "Terdapat" + Str(lstAtribut.ListCount) + " tabel."
+            lblJumlahAtribut = "Terdapat" + Str(lstAtribut.ListCount) + " atribut."
         End If
     End If
     Exit Sub

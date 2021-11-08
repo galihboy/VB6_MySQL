@@ -42,6 +42,14 @@ Begin VB.Form Form1
          Top             =   1560
          Width           =   2775
       End
+      Begin VB.Label lblJmlData 
+         Caption         =   "Jumlah data."
+         Height          =   495
+         Left            =   240
+         TabIndex        =   27
+         Top             =   3720
+         Width           =   2655
+      End
       Begin VB.Label Label1 
          Caption         =   "Teks yang dicari : "
          Height          =   255
@@ -234,6 +242,7 @@ Attribute VB_Exposed = False
 Option Explicit
 ' Koneksi VB6 & MySQL/MariaDB
 ' Developed by Galih Hermawan @ Sat, 6 Nov 2021
+' Last update: 8/11/2021
 ' https://galih.eu
 ' https://galihboy.github.io
 ' https://masgalih.medium.com
@@ -385,7 +394,7 @@ Private Sub cmdListAtribut_Click()
             MyRS.CloseRecordset
             Set MyRS = Nothing
 
-            lblJumlahAtribut = "Terdapat" + Str(lstAtribut.ListCount) + " tabel."
+            lblJumlahAtribut = "Terdapat" + Str(lstAtribut.ListCount) + " atribut."
         End If
     End If
     Exit Sub
@@ -474,6 +483,7 @@ Private Sub CariData(strAtribut As String)
             MyRS.MoveNext
         Loop
         
+        lblJmlData = "Ditemukan " & MyRS.RecordCount & " data."
         MyRS.CloseRecordset
         Set MyRS = Nothing
 
